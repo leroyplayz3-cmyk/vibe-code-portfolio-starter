@@ -11,7 +11,7 @@
   <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -33,19 +33,21 @@
   <main>
 
     <!-- ============ HERO ============ -->
-    <section class="hero container">
-      <p class="hero-greeting"><span aria-hidden="true">✦</span> Hi, I'm</p>
-      <!-- TODO: Put your name here -->
-      <h1 class="hero-name">Leroy</h1>
-      <!-- TODO: One line about who you are -->
-      <p class="hero-tagline">Student developer who likes building things on the web.</p>
-      <p class="hero-note">a little corner of the internet, made by me <span aria-hidden="true">♡</span></p>
-      <div class="hero-actions">
-        <a href="#projects" class="btn btn-primary">See my work</a>
-        <a href="#contact" class="btn btn-outline">Get in touch</a>
+    <section class="hero container" aria-labelledby="hero-name">
+      <div class="game-menu">
+        <p class="game-status"><span class="status-dot" aria-hidden="true"></span> PORTFOLIO QUEST</p>
+        <p class="hero-greeting">WELCOME</p>
+        <h1 class="hero-name" id="hero-name">LEROY</h1>
+        <p class="hero-tagline">Student developer who likes building things on the web.</p>
+        <p class="hero-note">Republic Polytechnic · Enterprise Cloud Computing</p>
+        <nav class="game-menu-actions" aria-label="Game menu">
+          <a href="#about" class="btn btn-primary start-button"><span aria-hidden="true">▶</span> START GAME</a>
+          <a href="#projects" class="btn btn-outline">PROJECT SELECT</a>
+        </nav>
+        <p class="game-hint"><span aria-hidden="true">✦</span> PRESS START TO EXPLORE <span aria-hidden="true">✦</span></p>
+        <span class="game-pixel game-pixel-one" aria-hidden="true"></span>
+        <span class="game-pixel game-pixel-two" aria-hidden="true"></span>
       </div>
-      <span class="hero-sticker" aria-hidden="true">made with<br />curiosity!</span>
-      <span class="hero-doodle" aria-hidden="true">✳</span>
     </section>
 
     <!-- ============ ABOUT ============ -->

@@ -17,7 +17,7 @@
   --lavender: #211c4a;
   --blue: #12324b;
   --font: "Space Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --display: "Orbitron", "Arial Black", sans-serif;
+  --display: "Pixelify Sans", "Courier New", monospace;
   --hand: "Space Grotesk", system-ui, sans-serif;
   --radius: 8px;
   --max-width: 1000px;
@@ -1030,4 +1030,263 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   body::after { animation: none; }
+}
+
+/* ---------- Pixel-style type and motion ---------- */
+.hero-name,
+.section-title,
+.project-card h3 {
+  font-family: var(--display);
+}
+
+.hero-name {
+  animation: pixel-arrive 560ms steps(5, end) both;
+}
+
+.hero-sticker {
+  animation: pixel-hop 4.8s steps(4, end) infinite;
+}
+
+.project-card {
+  transition-timing-function: steps(4, end);
+}
+
+.btn,
+.skills-list li,
+.contact-links a {
+  transition-timing-function: steps(3, end);
+}
+
+@keyframes pixel-arrive {
+  0% { opacity: 0; transform: translateY(12px); clip-path: inset(0 100% 0 0); }
+  60% { opacity: 1; transform: translateY(0); clip-path: inset(0 0 0 0); }
+  80% { transform: translateY(-2px); }
+  100% { transform: translateY(0); clip-path: inset(0); }
+}
+
+@keyframes pixel-hop {
+  0%, 84%, 100% { transform: translateY(0); }
+  88% { transform: translateY(-4px); }
+  92% { transform: translateY(0); }
+  96% { transform: translateY(-2px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-name,
+  .hero-sticker {
+    animation: none;
+  }
+}
+
+/* ---------- Arcade start screen ---------- */
+.hero {
+  display: grid;
+  place-items: center;
+  min-height: min(760px, calc(100svh - 112px));
+  padding: 48px;
+  margin-top: 22px;
+  margin-bottom: 32px;
+  background:
+    linear-gradient(135deg, rgb(20 36 75 / 90%), rgb(8 15 39 / 94%)),
+    url("../assets/images/neon-city.svg") center 48% / cover;
+  border: 2px solid color-mix(in srgb, var(--accent) 72%, transparent);
+  box-shadow: 0 0 36px rgb(3 8 26 / 54%), inset 0 0 48px rgb(4 8 25 / 46%);
+  text-align: center;
+  overflow: hidden;
+}
+
+.game-menu {
+  position: relative;
+  width: min(100%, 700px);
+  padding: clamp(24px, 6vw, 58px) clamp(18px, 5vw, 50px) 28px;
+  border: 1px solid color-mix(in srgb, var(--yellow) 48%, transparent);
+  background: rgb(7 13 34 / 68%);
+  box-shadow: 0 0 28px rgb(65 234 255 / 10%);
+  backdrop-filter: blur(7px);
+}
+
+.game-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.game-status > span:last-child { color: var(--yellow); }
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  margin-right: auto;
+  background: var(--yellow);
+  box-shadow: 0 0 10px var(--yellow);
+  animation: status-blink 1.8s steps(2, end) infinite;
+}
+
+.hero-greeting {
+  margin-top: clamp(34px, 7vh, 68px);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 0.8rem;
+  letter-spacing: 0.24em;
+}
+
+.hero-name {
+  width: auto;
+  margin: 12px 0 16px;
+  color: #f3fbff;
+  font-family: var(--display);
+  font-size: clamp(3.3rem, 11vw, 7.5rem);
+  font-weight: 700;
+  line-height: 0.98;
+  letter-spacing: 0.045em;
+  text-shadow: 4px 4px 0 rgb(255 79 163 / 70%), -3px -2px 0 rgb(65 234 255 / 65%), 0 0 26px rgb(65 234 255 / 28%);
+  animation: pixel-arrive 560ms steps(5, end) both, title-flicker 5s steps(1, end) 1s infinite;
+}
+
+.hero-name span {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--yellow);
+  font-family: var(--font);
+  font-size: clamp(0.9rem, 2.2vw, 1.15rem);
+  letter-spacing: 0.32em;
+  text-shadow: 2px 2px 0 rgb(255 79 163 / 48%);
+}
+
+.hero-name::after { display: none; }
+
+.hero-tagline {
+  max-width: 470px;
+  margin: 0 auto;
+  color: #d3e2f2;
+  font-size: clamp(1rem, 2.6vw, 1.2rem);
+}
+
+.hero-note {
+  margin-top: 12px;
+  color: var(--accent);
+  font-family: var(--font);
+  font-size: 0.82rem;
+  letter-spacing: 0.07em;
+}
+
+.game-menu-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 32px;
+}
+
+.game-menu-actions .btn {
+  min-width: 184px;
+  padding: 13px 20px;
+  font-family: var(--display);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-align: center;
+  text-decoration: none;
+}
+
+.start-button {
+  color: #071323;
+  background: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 4px 4px 0 var(--yellow), 0 0 18px rgb(65 234 255 / 35%);
+}
+
+.start-button span { margin-right: 7px; }
+
+.game-menu-actions .btn-outline {
+  color: var(--text);
+  background: transparent;
+  border-color: var(--yellow);
+  box-shadow: 3px 3px 0 rgb(255 79 163 / 70%);
+}
+
+.game-hint {
+  margin-top: 28px;
+  color: var(--yellow);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  animation: hint-blink 1.8s steps(2, end) infinite;
+}
+
+.game-pixel {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  background: var(--accent);
+  box-shadow: 0 0 12px var(--accent);
+  image-rendering: pixelated;
+  animation: pixel-float 3s steps(3, end) infinite;
+}
+
+.game-pixel-one { top: 28%; left: 7%; }
+.game-pixel-two {
+  right: 9%;
+  bottom: 24%;
+  width: 6px;
+  height: 6px;
+  background: var(--yellow);
+  box-shadow: 0 0 12px var(--yellow);
+  animation-delay: -1.3s;
+}
+
+@keyframes status-blink {
+  50% { opacity: 0.35; }
+}
+
+@keyframes hint-blink {
+  0%, 45% { opacity: 1; }
+  46%, 100% { opacity: 0.5; }
+}
+
+@keyframes pixel-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes title-flicker {
+  0%, 94%, 96%, 100% { opacity: 1; }
+  95% { opacity: 0.84; }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    min-height: calc(100svh - 92px);
+    padding: 22px 14px;
+    margin-top: 14px;
+    margin-bottom: 24px;
+  }
+
+  .game-menu { padding: 24px 12px 22px; }
+
+  .game-status {
+    font-size: 0.58rem;
+    letter-spacing: 0.08em;
+  }
+
+  .game-menu-actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .game-menu-actions .btn { width: min(100%, 240px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .status-dot,
+  .hero-name,
+  .game-hint,
+  .game-pixel {
+    animation: none;
+  }
 }
