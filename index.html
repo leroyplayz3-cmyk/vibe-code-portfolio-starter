@@ -5,10 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- TODO: Change the title and description to your own -->
-  <title>Your Name | Portfolio</title>
-  <meta name="description" content="Personal portfolio of Your Name — student, builder, problem solver." />
+  <title>Leroy | Portfolio</title>
+  <meta name="description" content="Personal portfolio of Leroy — student, builder, problem solver." />
 
   <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -16,7 +19,7 @@
   <!-- ============ NAVIGATION ============ -->
   <header class="site-header">
     <nav class="nav container">
-      <a href="#" class="nav-logo">YN</a>
+      <a href="#" class="nav-logo" aria-label="Leroy home">L</a>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
@@ -31,40 +34,53 @@
 
     <!-- ============ HERO ============ -->
     <section class="hero container">
-      <p class="hero-greeting">Hi, I'm</p>
+      <p class="hero-greeting"><span aria-hidden="true">✦</span> Hi, I'm</p>
       <!-- TODO: Put your name here -->
-      <h1 class="hero-name">Your Name</h1>
+      <h1 class="hero-name">Leroy</h1>
       <!-- TODO: One line about who you are -->
       <p class="hero-tagline">Student developer who likes building things on the web.</p>
+      <p class="hero-note">a little corner of the internet, made by me <span aria-hidden="true">♡</span></p>
       <div class="hero-actions">
         <a href="#projects" class="btn btn-primary">See my work</a>
         <a href="#contact" class="btn btn-outline">Get in touch</a>
       </div>
+      <span class="hero-sticker" aria-hidden="true">made with<br />curiosity!</span>
+      <span class="hero-doodle" aria-hidden="true">✳</span>
     </section>
 
     <!-- ============ ABOUT ============ -->
-    <section id="about" class="section container">
-      <h2 class="section-title">About Me</h2>
-      <div class="about-grid">
-        <!-- TODO: Replace with your own photo in assets/images/ -->
-        <img src="assets/images/profile-placeholder.svg" alt="Photo of Your Name" class="about-photo" />
-        <div>
-          <!-- TODO: Write 2–3 short paragraphs about yourself -->
-          <p>
-            I'm a student at <strong>Your School</strong> studying <strong>Your Course</strong>.
-            Write a few sentences here about what you're into, what you're learning,
-            and what kind of work you want to do.
-          </p>
-          <p>
-            Outside of class, I enjoy <em>hobby one</em>, <em>hobby two</em>, and <em>hobby three</em>.
-          </p>
+    <section id="about" class="section container about-section">
+      <div class="section-heading">
+        <p class="section-label">01 / PLAYER PROFILE</p>
+        <h2 class="section-title">Player profile</h2>
+      </div>
+      <div class="journal-page">
+          <p class="journal-caption">player data // real-world edition</p>
+        <div class="about-grid">
+          <!-- TODO: Replace with your own photo in assets/images/ -->
+          <img src="assets/images/profile-placeholder.svg" alt="Photo of Leroy" class="about-photo" />
+          <div class="journal-copy">
+            <!-- TODO: Write 2–3 short paragraphs about yourself -->
+            <p>
+              I'm a student at <strong>Republic Polytechnic</strong> studying <strong>Diploma in Enterprise Cloud Computing</strong>.
+              Write a few sentences here about what you're into, what you're learning,
+              and what kind of work you want to do.
+            </p>
+            <p>
+              Outside of class, I enjoy <em>hobby one</em>, <em>hobby two</em>, and <em>hobby three</em>.
+            </p>
+          </div>
         </div>
+        <span class="journal-doodle" aria-hidden="true">✿</span>
       </div>
     </section>
 
     <!-- ============ SKILLS ============ -->
     <section id="skills" class="section container">
-      <h2 class="section-title">Skills</h2>
+      <div class="section-heading">
+        <p class="section-label">02 / SKILL STATS</p>
+        <h2 class="section-title">My loadout</h2>
+      </div>
       <!-- TODO: List your real skills -->
       <ul class="skills-list">
         <li>HTML</li>
@@ -78,7 +94,10 @@
 
     <!-- ============ PROJECTS ============ -->
     <section id="projects" class="section container">
-      <h2 class="section-title">Projects</h2>
+      <div class="section-heading">
+        <p class="section-label">03 / LEVEL SELECT</p>
+        <h2 class="section-title">Choose a project</h2>
+      </div>
       <div class="projects-grid">
 
         <!-- TODO: Copy this card for each project you want to show -->
@@ -113,22 +132,26 @@
     </section>
 
     <!-- ============ CONTACT ============ -->
-    <section id="contact" class="section container">
-      <h2 class="section-title">Contact</h2>
-      <p>Want to work together or just say hi? Find me here:</p>
-      <!-- TODO: Put in your real links (delete any you don't use) -->
-      <ul class="contact-links">
-        <li><a href="mailto:you@example.com">Email</a></li>
-        <li><a href="https://github.com/your-username" target="_blank" rel="noopener">GitHub</a></li>
-        <li><a href="https://linkedin.com/in/your-username" target="_blank" rel="noopener">LinkedIn</a></li>
-      </ul>
+    <section id="contact" class="section container contact-section">
+      <div class="contact-note">
+        <p class="section-label">04 / CO-OP MODE</p>
+        <h2 class="section-title">Let's team up</h2>
+        <p>Want to work together or just say hi? Find me here:</p>
+        <!-- TODO: Put in your real links (delete any you don't use) -->
+        <ul class="contact-links">
+          <li><a href="mailto:you@example.com">Email</a></li>
+          <li><a href="https://github.com/your-username" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://linkedin.com/in/your-username" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+        <span class="contact-doodle" aria-hidden="true">↗</span>
+      </div>
     </section>
 
   </main>
 
   <!-- ============ FOOTER ============ -->
   <footer class="site-footer">
-    <p>© <span id="year"></span> Your Name. Built during the Vibe Code Your Portfolio workshop.</p>
+    <p>© <span id="year"></span> Leroy. Built during the Vibe Code Your Portfolio workshop.</p>
   </footer>
 
   <script src="js/main.js"></script>
